@@ -17,8 +17,8 @@
         }
 
         div {
-            padding-left: 5%;
-            padding-right: 5%;
+            padding-left: 15%;
+            padding-right: 15%;
         }
 
         header {
@@ -28,12 +28,12 @@
         }
 
         header h1 {
-            padding-left: 5%;
+            padding-left: 15%;
             margin-bottom: 0;
         }
 
         header h2 {
-            padding-left: 5%;
+            padding-left: 15%;
             opacity: 70%;
             margin-top: 0;
         }
@@ -56,7 +56,9 @@
         }
 
         code {
-            font-size: 1.3em;
+            font-size: 1.2em;
+            background-color: white;
+            border-radius: 30px 30px 30px 30px;
         }
     </style>
 </head>
@@ -71,7 +73,7 @@
         <main>
             <h2>Section I – OS, Kernel, Shell</h2>
 
-            <h3>1. What components are part of the von Neuman Architecture?</h3>
+            <h3>1. What components are part of the von Neuman architecture?</h3>
 
             <p>The von Neuman architecture consists of the following components:</p>
 
@@ -101,6 +103,93 @@
             <h3>5. What is the main task of the shell?</h3>
             
             <h2>Section II – UNIX, Scripting</h2>
+
+            <h3>6. What is the octal representation of a file that can be read and written only by its owner?</h3>
+
+            <p>The octal representation of a file which can only be read and written by its owner is 600. If we wanted the
+                owner to be able to execute this file as well, for example if the file was a script, we could use the octal representation
+                of 700. 
+            </p>
+
+            <p>To set this file permission the command <code>chmod 600 (filename)</code> should be used.</p>
+
+            <h3>7. In UNIX systems, what is the common name of the special user that can access and modify every file?</h3>
+
+            <p>The name of the special user that can access and modify every file in a UNIX system is superuser.</p>
+            <p>To run a command as the superuser, we use <code>sudo (command)</code>.</p>
+
+            <h3>8. Which file permission classes are available in UNIX systems?</h3>
+
+            <p>There excist three different file permission classes in UNIX systems. These are the user, group and others.
+                If we would like to remove or add privileges to any of these classes we use the <code>chmod</code> togheter with 
+                a specification of which group(s) we want to change the permissions for, and which permissions to add or remove. 
+                The different permissions for a file are read, write and execute.
+            </p>
+
+            <h3>9. As of 2020, which percentage of servers have UNIX-like OS?</h3>
+
+            <p>According to <a href="https://w3techs.com/technologies/overview/operating_system" target="_blank">w3techs.com</a>
+            more than 70% of the operating system of servers are Unix or Unix-like. Their excact number as of 13 November 2020 is 71,8%.
+            </p>
+
+            <h3>10. The command ssh will:</h3>
+
+            <p>...start the SSH client program. This program establishes a secure connection to a SSH server on a remote machine.
+                The ssh command makes it possible to log into a remote machine, transferring files between the machines and excecute
+            commands on the remote machine. <a href="https://www.ssh.com/ssh/command/" target="_blank">(ssh.com)</a></p>
+            
+            <p></p>All students and emplyees at NTNU have their own dedicated remote server. 
+            This server is accessed by using the command <code>ssh studentname@login.stud.ntnu.no</code>.</p> 
+
+            <h3>11. UNIX Command: access your current working directory</h3>
+            <p>Use <code>pwd</code> for writing the path to your current working directory. Pwd is a shortage for "print working directory".</p>
+            <p>If you set your working directory to the desktop using <code>cd Desktop/</code>, and then use the <code>pwd</code> command,
+            the output will be: /Users/UserName/Desktop.</p>
+
+            <h3>12. UNIX Command: rename files (give an example)</h3>
+
+            <p>To rename a file you can use the <code>mv</code> command. This is shortage for "move", so this command is also used
+            for moving files or folders.</p>
+
+            <p>Lets say our current working directory is the desktop. The path is /Users/UserName/Desktop. There excist one file
+                there named apple.txt, and we would like to rename this one to pear.txt.
+            </p>
+
+            <code>ls</code> // lists all files at the current working directory, which is the desktop.
+            <p>Output: apple.txt</p>
+            <code>mv apple.txt pear.txt</code> // first the command wants the source, followed by the target. mv old-file-name new-file-name
+            <p>Output: none. Since the operation was successfull, there is no output and the file apple.txt is now renamed to pear.txt.
+                Lets confirm this.
+            </p>
+            <code>ls</code>
+            <p>Output: pear.txt</p>
+
+            <h3>13. UNIX Command: schedule the execution of programs in the future</h3>
+            
+            <p>To schedule the execution of programs in the future, there is something called cron jobs. A cron job is a sheduled task
+                which runs at its given time. <code>Crontab -l</code> makes it possible to see if there are any cron jobs saved. To change the file
+                containing the cron jobs you have to use <code>crontab -e</code>.
+            </p>
+            <p>A cron job needs to specify which time it will be running, and what to execute at that time. For example would 
+                <code>* * * * * /backup.sh</code> run the script "backup.sh" every minute. The first asterisk represents minute, the second hour, third day, fourth month and the last one day of the week.
+                When we use an asterisk, it means any value. Therefore the given example will run at every single minute as long as the cron job is active. 
+            </p>
+            
+            <h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
+
+            <p>To shutdown a command, we can use the <code>kill</code> command. The command relies on knowing the PID, process ID, which
+            in this case is 123. For stopping this process we can simply use <code>kill 123</code>. If for some reason this does not work,
+        using <code>sudo kill 123</code> will gain the necessary rights to kill the process.</p>
+            
+            <p>If there was a process running which we would like to stop, but the PID is unknown, we would have to use
+        the <code>ps</code> command. This lists all the running processes, and shows the PID's.</p>
+        
+          <h3>15. UNIX Command: access your root user</h3>
+            <p>If you need special privileges and full rights, you can access your root user with the command <code>sudo</code>.
+            This allows you to run a command as the root user as long as you include "sudo" in front of the commands everytime. If you need to
+        run several commands afterwards as the root user, you can use <code>sudo -i</code> to remove the need of including "sudo" everytime.
+    If you wonder which user you are currently using it is possible to use the command <code>whoami</code>, and the name of the
+active user will be printed.</p>
         </main>
     </div>
 </body>
