@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDG1100-Oblig-HenrikLandgraffGranum</title>
+    <meta name="robots" content="noindex">
+    <title>IDG1100 Oblig - Henrik Landgraff Granum</title>
     <style>
         * {
             box-sizing: border-box;
@@ -57,8 +58,26 @@
 
         code {
             font-size: 1.2em;
-            background-color: white;
+            background-color: rgb(180, 216, 253);
             border-radius: 30px 30px 30px 30px;
+            padding: 5px;
+        }
+
+        .script {
+            background-color: black;
+            padding: 1%;
+            border-radius: 15px 15px 15px 15px;
+        }
+
+        .script code {
+            border-radius: 0 0 0 0;
+            background-color: black;
+            color: white;
+        }
+
+        .bold {
+            font-weight: bold;
+            border-bottom: 2px dotted black;
         }
     </style>
 </head>
@@ -89,7 +108,7 @@
             <h3>2. What is user space?</h3>
 
             <p>The user space is part of an operating system* and is all the code which runs outside of the operating systems
-                kernel**. This could be application software like a web browser or Adobe Photshop, and even different libraries.</p>
+                kernel**. This could be application software like a web browser or Adobe Photoshop, and even different libraries.</p>
 
                 <p class="exp">*Operating system: system software which manages computer hardware, software resources and provides
                     common services for computer programs.</p>
@@ -98,20 +117,37 @@
 
             <h3>3. What is the shell?</h3>
 
+            <p>There exists multiple versions of the shell on Linux and other Unix-like systems, which is a user interface for accessing the operating systems services.
+                The shell makes it possible to manipulate and execute applications with given conditions.
+            </p>
+
+            <p>The shell can either operate using a CLI (command line interface) or using the GUI (graphical user interface). The CLI requires the user to input commands and know their syntax. For scripting,
+                a basic understanding of a scripting language is needed as well. The graphical user interface can be used just as it is, and can be learned by looking at it and testing out several buttons.
+                Main advantage of using a CLI is speed and flexibility. It is a much more advanced tool than the GUI and can make operations much faster. 
+            </p>
+
             <h3>4. Where is the shell located?</h3>
 
+            <p>The shell resides within the user space of the computer alongside other application software and libraries.
+                In this way the user will be able to use the shell to achieve different tasks.
+            </p>
+
             <h3>5. What is the main task of the shell?</h3>
+
+            <p>The main task of the shell is to be used interactively by the user to execute commands. It can also control the UNIX session by customizing it, for example change the home directory or set start-up files.
+                The shell is also used for programming, and includes commands that can be used to create scripts. These scripts can be neat for executing several individual commands at once. 
+                (<a href="https://docstore.mik.ua/orelly/unix/unixnut/ch03_02.htm" target="_blank">Unix in a nutshell</a>) </p>
             
             <h2>Section II – UNIX, Scripting</h2>
 
             <h3>6. What is the octal representation of a file that can be read and written only by its owner?</h3>
 
-            <p>The octal representation of a file which can only be read and written by its owner is 600. If we wanted the
+            <p>The octal representation of a file which can only be read and written by its owner is 600. If you want the
                 owner to be able to execute this file as well, for example if the file was a script, we could use the octal representation
                 of 700. 
             </p>
 
-            <p>To set this file permission the command <code>chmod 600 (filename)</code> should be used.</p>
+            <p>To set the wanted file permission of 600 you have to use the command <code>chmod 600 (filename)</code>.</p>
 
             <h3>7. In UNIX systems, what is the common name of the special user that can access and modify every file?</h3>
 
@@ -120,8 +156,8 @@
 
             <h3>8. Which file permission classes are available in UNIX systems?</h3>
 
-            <p>There excist three different file permission classes in UNIX systems. These are the user, group and others.
-                If we would like to remove or add privileges to any of these classes we use the <code>chmod</code> togheter with 
+            <p>There exist three different file permission classes in UNIX systems. These are the user, group and others.
+                If we would like to remove or add privileges to any of these classes, we use the <code>chmod</code> together with 
                 a specification of which group(s) we want to change the permissions for, and which permissions to add or remove. 
                 The different permissions for a file are read, write and execute.
             </p>
@@ -129,50 +165,50 @@
             <h3>9. As of 2020, which percentage of servers have UNIX-like OS?</h3>
 
             <p>According to <a href="https://w3techs.com/technologies/overview/operating_system" target="_blank">w3techs.com</a>
-            more than 70% of the operating system of servers are Unix or Unix-like. Their excact number as of 13 November 2020 is 71,8%.
+            more than 70% of the operating system of servers are Unix or Unix-like. Their exact number as of 13 November 2020 is 71,8%.
             </p>
 
             <h3>10. The command ssh will:</h3>
 
             <p>...start the SSH client program. This program establishes a secure connection to a SSH server on a remote machine.
-                The ssh command makes it possible to log into a remote machine, transferring files between the machines and excecute
-            commands on the remote machine. <a href="https://www.ssh.com/ssh/command/" target="_blank">(ssh.com)</a></p>
+                The ssh command makes it possible to log into a remote machine, transferring files between the machines and execute 
+                commands on the remote machine. <a href="https://www.ssh.com/ssh/command/" target="_blank">(ssh.com)</a></p>
             
-            <p></p>All students and emplyees at NTNU have their own dedicated remote server. 
+            <p>All students and employees at NTNU have their own dedicated remote server. 
             This server is accessed by using the command <code>ssh studentname@login.stud.ntnu.no</code>.</p> 
 
             <h3>11. UNIX Command: access your current working directory</h3>
             <p>Use <code>pwd</code> for writing the path to your current working directory. Pwd is a shortage for "print working directory".</p>
             <p>If you set your working directory to the desktop using <code>cd Desktop/</code>, and then use the <code>pwd</code> command,
-            the output will be: /Users/UserName/Desktop.</p>
+            the output will be: /Users/username/Desktop.</p>
 
             <h3>12. UNIX Command: rename files (give an example)</h3>
 
             <p>To rename a file you can use the <code>mv</code> command. This is shortage for "move", so this command is also used
             for moving files or folders.</p>
 
-            <p>Lets say our current working directory is the desktop. The path is /Users/UserName/Desktop. There excist one file
+            <p>Let’s say our current working directory is the desktop. The path is /Users/username/Desktop. There exist one file
                 there named apple.txt, and we would like to rename this one to pear.txt.
             </p>
 
             <code>ls</code> // lists all files at the current working directory, which is the desktop.
             <p>Output: apple.txt</p>
             <code>mv apple.txt pear.txt</code> // first the command wants the source, followed by the target. mv old-file-name new-file-name
-            <p>Output: none. Since the operation was successfull, there is no output and the file apple.txt is now renamed to pear.txt.
-                Lets confirm this.
+            <p>Output: none. Since the operation was successful, there is no output and the file apple.txt is now renamed to pear.txt.
+                Let's confirm this.
             </p>
             <code>ls</code>
             <p>Output: pear.txt</p>
 
             <h3>13. UNIX Command: schedule the execution of programs in the future</h3>
             
-            <p>To schedule the execution of programs in the future, there is something called cron jobs. A cron job is a sheduled task
+            <p>To schedule the execution of programs in the future, there is something called cron jobs. A cron job is a scheduled task
                 which runs at its given time. <code>Crontab -l</code> makes it possible to see if there are any cron jobs saved. To change the file
                 containing the cron jobs you have to use <code>crontab -e</code>.
             </p>
-            <p>A cron job needs to specify which time it will be running, and what to execute at that time. For example would 
+            <p>A cron job needs to specify which time it will be running, and what to execute at that time. For example, would 
                 <code>* * * * * /backup.sh</code> run the script "backup.sh" every minute. The first asterisk represents minute, the second hour, third day, fourth month and the last one day of the week.
-                When we use an asterisk, it means any value. Therefore the given example will run at every single minute as long as the cron job is active. 
+                When we use an asterisk, it means any value. Therefore, the given example will run at every single minute as long as the cron job is active. 
             </p>
             
             <h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
@@ -186,10 +222,188 @@
         
           <h3>15. UNIX Command: access your root user</h3>
             <p>If you need special privileges and full rights, you can access your root user with the command <code>sudo</code>.
-            This allows you to run a command as the root user as long as you include "sudo" in front of the commands everytime. If you need to
-        run several commands afterwards as the root user, you can use <code>sudo -i</code> to remove the need of including "sudo" everytime.
+            This allows you to run a command as the root user as long as you include "sudo" in front of the commands every time. If you need to
+        run several commands afterwards as the root user, you can use <code>sudo -i</code> to remove the need of including "sudo" every time.
     If you wonder which user you are currently using it is possible to use the command <code>whoami</code>, and the name of the
 active user will be printed.</p>
+
+<h3>16. Crontab scheduled: At minute 30 on Sunday.</h3>
+
+<p>Hover the crontab schedule values to see an explanation. An asterisk (*) means any value.</p>
+
+<code><span title="Minute (0-59)">30</span> <span title="Hour (0-23)">*</span> <span title="Day (1-31)">*</span> <span title="Month (1-12)">*</span> <span title="Day of the week (0-6)">0</span> command-to-execute</code>
+
+<h3>17. Crontab scheduled: At minute 30 on day-of-month 15.</h3>
+
+<code><span title="Minute (0-59)">30</span> <span title="Hour (0-23)">*</span> <span title="Day (1-31)">15</span> <span title="Month (1-12)">*</span> <span title="Day of the week (0-6)">*</span> command-to-execute</code>
+
+<h3>18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.</h3>
+
+<code><span title="Minute (0-59)">30</span> <span title="Hour (0-23)">5</span> <span title="Day (1-31)">*</span> <span title="Month (1-12)">6</span> <span title="Day of the week (0-6)">0-1</span> command-to-execute</code>
+
+<h3>19. Script: print your name and date</h3>
+<div class="script">
+<code>#!/bin/bash<br><br>
+# Creates a variable containing todays date.<br>
+# +%d.%m.%Y makes sure only the date is stored.<br>
+todaysDate=$(date +"%d.%m.%Y")<br><br>
+
+# Asks for the users name and stores it.<br>
+read -p "What is your name? " name<br><br>
+# Prints the users name and todays date.<br>
+echo "Hello $name, nice to see you! The date today is $todaysDate."</code>
+</div>
+
+<h3>20. Script: add two numeric values, print the result</h3>
+<div class="script">
+    <code>#!/bin/bash<br><br>
+    # Prints instruction.<br>
+    echo "Enter two number to see their sum."<br><br>
+    # Reads the two numbers, and saves them in variables.<br>
+    read -p "Enter first number: " number1<br>
+    read -p "Enter second number: " number2<br><br>
+    # Saves the sum of the numbers in a new variable.<br>
+    answer=$((number1 + number2))<br><br>
+    # Prints the sum.<br>
+    echo "The sum of $number1 and $number2 is $answer."</code>
+</div>
+
+<h3>21. Script: inputs username, prints “USERNAME stored”</h3>
+<div class="script">
+    <code>#!/bin/bash<br><br>
+    # Reads the users username, and stores it in a variable.<br>
+    read -p "Please enter your username: " username<br><br>
+    # Prints the username and a message saying it is stored.<br>
+    echo "$username stored."</code><br>
+</div>
+
+<h3>22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_”
+is the output of the “hostname” command.</h3>
+<div class="script">
+    <code>#!/bin/bash<br><br>
+    # Saves the current host in a variable.<br>
+    currentHost=$(hostname)<br><br>
+    # Prints a message with the current host.<br>
+    echo "This script is running on $currentHost."</code><br>
+</div>
+
+<h3>23. Script: Store the output of the working directory (from where the script is run) in a variable then print the
+variable.</h3>
+<div class="script">
+    <code>#!/bin/bash<br><br>
+    # Saves the current working directory in a variable.<br>
+    workingDirectory=$(pwd)<br><br>
+    # Prints the current working directory.<br>
+    echo "$workingDirectory"</code><br>
+</div>
+
+<h3>24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” + DATE. Cronjob is
+scheduled every 30 minutes on today’s date (only today).</h3>
+
+<p>This tutorial is tested on macOS, using the terminal with the bash shell and the vi-editor.</p>
+
+<p><span class="bold">Step 1</span>: Press cmd+space and search for "Terminal". Press enter to open it.</p>
+
+<p><span class="bold">Step 2</span>: Write the command <code>crontab -e</code> to start creating the new cronjob. Then press <code>i</code> to enter insert mode.</p>
+
+<p><span class="bold">Step 3</span>: In insert mode, add the following line. Be sure to change the date to your current one! If your date is 24.12.20, then you need to type: */30 * 24 12 4. The first one represents minutes,
+    which needs to stay as it is. Do not  change the second one either, which represents every hour. The third value is the day, fourth is month and the last one day of the week. Make sure all of them are correct. You need to type in your own username instead of "henrikgranum". The command will create the file, so you don't need to do this in advance.<br><br><code>*/30 * 16 11 1 echo "Task scheduled at $(date)" >> /Users/henrikgranum/Desktop/log.txt</code><br><br> 
+    This will run the specified command at every 30 minute of the day this cronjob is set for, and output the text with the date/time to the specified location.</p>
+
+<p><span class="bold">Step 4</span>: We are now done creating the cronjob. To save and exit, first press the escape button on your keyboard. After that write <code>:wq</code>. Now your cronjob is saved, and you are back to the command line.</p>
+
+<p><span class="bold">Step 5</span>: On your desktop you will now notice that the file will be created, and the date output will be added to this file in the specified time. If you would like to test that the cronjob is working, you can change the minute to * so the command will print the date every minute.</p>
+
+<p>Video version available at: <a href="https://youtu.be/yq4bgy-ZdJM" target="_blank">https://youtu.be/yq4bgy-ZdJM</a></p>
+
+<h3>25. Create a script that takes an input (letter or number) that will display the answer of a question. The script should
+when started list a menu for the user with the different questions that can be chosen and which corresponding letter the
+user will have to give as input to display the answer of the desired question. One of the possible inputs the user
+should be able to make is "q" for quitting the script. The menu should also have a default case where all the items is
+displayed again, or no changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle
+the menu. Each option in the menu should lead to an echo of the answer</h3>
+
+<div class="script">
+    <code>
+    #!/bin/bash<br><br>
+
+# Variable for keeping the number related to the questions.<br>
+question=<br><br>
+
+# Prints an instruction.<br>
+echo ""<br>
+echo "Please choose one of the questions by typing a number (1-5)."<br>
+echo "To exit the program, type "q"."<br>
+echo ""<br><br>
+ 
+# As long as the user don't type q, run this code.<br>
+while [ "$question" != "q" ]<br>
+do<br><br>
+echo "-----------------------------------------------"<br>
+echo "1. What is the world's longest river?"<br>
+echo "2. What is the diameter of Earth?"<br>
+echo "3. What is the capital city of Spain?"<br>
+echo "4. Who directed the Lord of the Rings trilogy?"<br>
+echo "5. Which university is the best?"<br>
+echo "-----------------------------------------------"<br>
+echo ""<br><br>
+
+# Choose which questions answer to show.<br>
+read -p "Which question do you want the answer for (1-5): " question<br><br>
+
+# If the user writes a Q instead of q, make it lowercase.<br>
+if [ "$question" == "Q" ]<br>
+
+ then <br>
+     question="q"<br>
+fi <br><br>
+ 
+# Prints the answer to the question the user wanted. <br>
+case $question in<br><br>
+
+  1)<br>
+    echo "ANSWER: The world's longest river is the Amazon river."<br>
+    echo ""<br>
+    ;;<br><br>
+
+  2)<br>
+    echo "ANSWER: The diameter of the earth is 8000 miles."<br>
+    echo ""<br>
+    ;;<br><br>
+
+  3)<br>
+    echo "ANSWER: The capital city of Spain is Madrid."<br>
+    echo ""<br>
+    ;;<br><br>
+
+  4)<br>
+    echo "ANSWER: Lord of the Rings was directed by Peter Jackson."<br>
+    echo ""<br>
+    ;;<br><br>
+
+  5)<br>
+    echo "ANSWER: NTNU of course! :) But you already knew that?"<br>
+    echo ""<br>
+    ;;<br><br>
+
+# If the user writes q, the program will end and this message will confirm it.<br>
+
+  q)<br>
+    echo "Program ended."<br>
+    echo ""<br>
+    ;;<br><br>
+
+# If the user writes an unknown command, there will be an error message.<br>
+  *)<br>
+    echo "Not a valid value. Please read the instructions carefully."<br>
+    echo ""<br>
+    ;;<br><br>
+esac<br><br>
+
+done
+</code>
+
+</div>
         </main>
     </div>
 </body>
