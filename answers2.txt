@@ -84,7 +84,7 @@ echo "Hello $name, nice to see you! The date today is $todaysDate."
 #!/bin/bash
 
 # Prints instruction.
-echo "Enter two number to see their sum."
+echo "Enter two numbers to see their sum."
 
 # Reads the two numbers, and saves them in variables.
 read -p "Enter first number: " number1
