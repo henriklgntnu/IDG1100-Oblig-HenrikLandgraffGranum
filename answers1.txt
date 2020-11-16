@@ -1,0 +1,31 @@
+Section I – OS, Kernel, Shell
+
+IDG1100 Oblig
+Henrik Landgraff Granum
+
+1. What components are part of the von Neuman architecture?
+The von Neuman architecture consists of the following components:
+
+- a central processing unit containing a control unit and an arithmetic/logic unit
+- a memory unit which stores data and instructions
+- input and output devices
+
+This template of components detailed back in 1945 by John von Neumann is what all modern computers are based on.
+
+2. What is user space?
+The user space is part of an operating system* and is all the code which runs outside of the operating systems kernel**. This could be application software like a web browser or Adobe Photoshop, and even different libraries.
+
+*Operating system: system software which manages computer hardware, software resources and provides common services for computer programs.
+
+**Kernel: a key component of an operating system, and manages communication between the hardware and the user space.
+
+3. What is the shell?
+There exists multiple versions of the shell on Linux and other Unix-like systems, which is a user interface for accessing the operating systems services. The shell makes it possible to manipulate and execute applications with given conditions.
+
+The shell can either operate using a CLI (command line interface) or using the GUI (graphical user interface). The CLI requires the user to input commands and know their syntax. For scripting, a basic understanding of a scripting language is needed as well. The graphical user interface can be used just as it is, and can be learned by looking at it and testing out several buttons. Main advantage of using a CLI is speed and flexibility. It is a much more advanced tool than the GUI and can make operations much faster.
+
+4. Where is the shell located?
+The shell resides within the user space of the computer alongside other application software and libraries. In this way the user will be able to use the shell to achieve different tasks.
+
+5. What is the main task of the shell?
+The main task of the shell is to be used interactively by the user to execute commands. It can also control the UNIX session by customizing it, for example change the home directory or set start-up files. The shell is also used for programming, and includes commands that can be used to create scripts. These scripts can be neat for executing several individual commands at once. (https://docstore.mik.ua/orelly/unix/unixnut/ch03_02.htm)
