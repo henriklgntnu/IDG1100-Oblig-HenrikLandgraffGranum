@@ -462,6 +462,13 @@
                     ;;<br><br>
                 esac<br><br>
 
+                # Unless the user wants to quit, pause the loop for three seconds.<br>
+                # Makes it easier for the user to read the answer.<br>
+                if [ "$question" != "q" ]<br>
+                then<br>
+                sleep 3<br>
+                fi<br><br>
+
                 done
                 </code>
 

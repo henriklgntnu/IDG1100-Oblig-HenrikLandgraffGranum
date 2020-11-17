@@ -218,4 +218,11 @@ echo ""
 
 esac
 
+# Unless the user wants to quit, pause the loop for three seconds.
+# Makes it easier for the user to read the answer.
+if [ "$question" != "q" ]
+then
+sleep 3
+fi
+
 done
